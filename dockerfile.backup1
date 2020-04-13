@@ -1,0 +1,13 @@
+FROM   python
+# we are using  existing  docker  image if it will not be present then automatically will be pulled from docker hub
+MAINTAINER   ashutoshh@linux.com ,  9509957594
+#  image  maintainer info  
+RUN  mkdir  /myapp
+#  this  will create a directory in side new docker image
+#  RUN  instruction  can  accept  any Linux  based  command  or windows based also if it is windows container
+COPY  hello.py   /myapp/hello.py 
+#     host locaiton      docker  images location 
+#  this is take  data from current location  only
+#CMD  python  /myapp/hello.py
+ENTRYPOINT  python  /myapp/hello.py
+#  this will be default  parent process for all the containers from this docker image  
